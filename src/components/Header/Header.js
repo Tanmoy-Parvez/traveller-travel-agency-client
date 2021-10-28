@@ -23,7 +23,7 @@ const Header = () => {
     // // navigation menu bar
     return (
         <>
-            <Navbar collapseOnSelect expand="lg" className="fixed-top bg-white">
+            <Navbar collapseOnSelect expand="lg" className="fixed-top bg-light">
                 <Container>
                     {/* logo and title */}
                     <Navbar.Brand className="d-flex" href="">

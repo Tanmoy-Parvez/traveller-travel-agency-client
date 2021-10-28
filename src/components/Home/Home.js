@@ -1,9 +1,10 @@
 import React from 'react';
+import Banner from '../Banner/Banner';
 
 const Home = () => {
     return (
         <div className="marginTop">
-            <h1>This is home page</h1>
+            <Banner />
         </div>
     );
 };
