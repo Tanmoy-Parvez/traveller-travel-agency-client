@@ -37,13 +37,13 @@ const Header = () => {
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="ms-auto">
-                            <Nav.Item class="d-flex align-items-center navbar-item">
+                            <Nav.Item className="d-flex align-items-center navbar-item">
                                 {user?.email ?
                                     <div className="d-flex">
                                         <Nav.Link>
                                             <Link to="/home">My Bookings</Link>
                                             <Link to="/home">Manage Tours</Link>
-                                            <Link to="/home">Add Tour</Link>
+                                            <Link to="/add">Add Tour</Link>
                                             <span className="fw-bolder text-success ms-1">{user?.displayName}</span>
                                         </Nav.Link>
                                         <Button onClick={logOut} variant="danger"><i className="fas fa-sign-out-alt"></i></Button>

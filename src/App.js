@@ -9,6 +9,8 @@ import Footer from './components/Footer/Footer';
 import SignIn from './components/SignIn/SignIn';
 import SignUp from './components/SignUp/SignUp';
 import AuthProvider from './context/AuthProvider';
+import BookingForm from './BookingForm/BookingForm';
+import AddTour from './AddTour/AddTour';
 
 function App() {
   return (
@@ -28,6 +30,12 @@ function App() {
             </Route>
             <Route path="/signUp">
               <SignUp />
+            </Route>
+            <Route path="/booking">
+              <BookingForm />
+            </Route>
+            <Route path="/add">
+              <AddTour />
             </Route>
             <Route path="*">
               <NotFound />
