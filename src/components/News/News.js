@@ -1,67 +1,39 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Card, Col, Row } from 'react-bootstrap';
-import img1 from '../../images/news-images/friends.jpg'
+
 
 const News = () => {
+    const [newses, setNews] = useState([]);
+    useEffect(() => {
+        fetch("fakeData2.json")
+            .then(res => res.json())
+            .then(data => setNews(data))
+    }, [])
     return (
         <div className="my-5 container">
             <h5 className="text-info"><i>Check Out Our</i></h5>
             <h1>LATEST NEWS</h1>
             <Row xs={1} md={3} className="g-5 mt-1 text-start">
-                <Col>
-                    <Card>
-                        <Card.Img variant="top" src={img1} />
-                        <Card.Body>
-                            <Card.Title>FUN WITH FRIENDS</Card.Title>
-                            <Card.Text>
-                                It won't be a bigger problem to find one video game lover in your neighbor.Since the introduction with us they all enjoy the outer world.
-                            </Card.Text>
-                        </Card.Body>
-                        <Card.Footer>
-                            <small className="text-muted d-flex justify-content-between">
-                                <span>BLOG</span>
-                                <span>SUPERUSER</span>
-                                <span>15 AUGUST</span>
-                            </small>
-                        </Card.Footer>
-                    </Card>
-                </Col>
-                <Col>
-                    <Card>
-                        <Card.Img variant="top" src={img1} />
-                        <Card.Body>
-                            <Card.Title>FUN WITH FRIENDS</Card.Title>
-                            <Card.Text>
-                                It won't be a bigger problem to find one video game lover in your neighbor.Since the introduction with us they all enjoy the outer world.
-                            </Card.Text>
-                        </Card.Body>
-                        <Card.Footer>
-                            <small className="text-muted d-flex justify-content-between">
-                                <span>BLOG</span>
-                                <span>SUPERUSER</span>
-                                <span>15 AUGUST</span>
-                            </small>
-                        </Card.Footer>
-                    </Card>
-                </Col>
-                <Col>
-                    <Card>
-                        <Card.Img variant="top" src={img1} />
-                        <Card.Body>
-                            <Card.Title>FUN WITH FRIENDS</Card.Title>
-                            <Card.Text>
-                                It won't be a bigger problem to find one video game lover in your neighbor.Since the introduction with us they all enjoy the outer world.
-                            </Card.Text>
-                        </Card.Body>
-                        <Card.Footer>
-                            <small className="text-muted d-flex justify-content-between">
-                                <span>BLOG</span>
-                                <span>SUPERUSER</span>
-                                <span>15 AUGUST</span>
-                            </small>
-                        </Card.Footer>
-                    </Card>
-                </Col>
+                {
+                    newses.map(news => <Col>
+                        <Card>
+                            <Card.Img variant="top" src={news?.img} height="200px" />
+                            <Card.Body>
+                                <Card.Title className="text-uppercase">{news?.title}</Card.Title>
+                                <Card.Text className="text-secondary" style={{ textAlign: "justify" }}>
+                                    {news?.description}
+                                </Card.Text>
+                            </Card.Body>
+                            <Card.Footer>
+                                <small className="text-uppercase text-muted d-flex justify-content-between">
+                                    <span>{news?.subtitle}</span>
+                                    <span>{news?.user}</span>
+                                    <span>{news?.date}</span>
+                                </small>
+                            </Card.Footer>
+                        </Card>
+                    </Col>)
+                }
             </Row>
         </div>
     );
