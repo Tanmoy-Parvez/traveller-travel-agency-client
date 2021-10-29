@@ -20,8 +20,8 @@ const Header = () => {
     // navigation menu bar
     return (
         <>
-            <Navbar collapseOnSelect expand="lg" className="fixed-top bg-light">
-                <Container>
+            <Navbar collapseOnSelect expand="lg" className="fixed-top bg-light px-4">
+                <>
                     {/* logo and title */}
                     <Navbar.Brand className="d-flex" href="" onClick={handleNavbarBand}>
                         <img
@@ -43,7 +43,7 @@ const Header = () => {
                                     <div className="d-flex">
                                         <Nav.Link>
                                             <Link to="/myBookings">My Bookings</Link>
-                                            <Link to="/home">Manage Tours</Link>
+                                            <Link to="/manageBookings">Manage Tours</Link>
                                             <Link to="/add">Add Tour</Link>
                                             <span className="fw-bolder text-success ms-1">{user?.displayName}</span>
                                         </Nav.Link>
@@ -57,7 +57,7 @@ const Header = () => {
                             </Nav.Item>
                         </Nav>
                     </Navbar.Collapse>
-                </Container>
+                </>
             </Navbar>
         </>
     );

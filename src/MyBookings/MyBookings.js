@@ -10,7 +10,7 @@ const MyBookings = () => {
     }, [])
     return (
         <div className="marginTop container">
-            <h1 className="text-info">My all bookings</h1>
+            <h1 className="text-info pt-5">My All Bookings</h1>
             <div className="row my-5 gx-5 gy-2">
                 {
                     tours.map(tour => <div className="col-md-6">

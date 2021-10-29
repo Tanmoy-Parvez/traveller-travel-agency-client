@@ -12,6 +12,7 @@ import AuthProvider from './context/AuthProvider';
 import BookingForm from './BookingForm/BookingForm';
 import AddTour from './AddTour/AddTour';
 import MyBookings from './MyBookings/MyBookings';
+import ManageTours from './components/ManageTours/ManageTours';
 
 function App() {
   return (
@@ -40,6 +41,9 @@ function App() {
             </Route>
             <Route path="/myBookings">
               <MyBookings />
+            </Route>
+            <Route path="/manageBookings">
+              <ManageTours />
             </Route>
             <Route path="*">
               <NotFound />
