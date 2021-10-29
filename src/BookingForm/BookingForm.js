@@ -60,7 +60,7 @@ const BookingForm = () => {
                     />
                     <input
                         defaultValue={tour?.title}
-                        {...register("activity", { required: true })}
+                        {...register("title", { required: true })}
                         className="form-control w-75 mx-auto border-bottom border-dark border-top-0 border-start-0 border-end-0 mb-2"
                         placeholder="Activity"
                     />

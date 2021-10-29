@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 const MyBookings = () => {
     const [tours, setTours] = useState([]);
     useEffect(() => {
-        fetch("fakeData.json")
+        fetch("http://localhost:5000/myBookings")
             .then(res => res.json())
             .then(data => setTours(data))
     }, [])
