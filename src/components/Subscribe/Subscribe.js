@@ -10,7 +10,7 @@ const Subscribe = () => {
                 <Form className="d-flex my-3">
                     <FormControl
                         type="email"
-                        placeholder="Email"
+                        placeholder="Enter your email"
                         className="me-1 py-2"
                         aria-label="email"
                     />
