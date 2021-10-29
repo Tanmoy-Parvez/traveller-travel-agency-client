@@ -18,17 +18,16 @@ const Tours = () => {
             <Row xs={1} md={3} className="g-5 mt-3 text-start">
                 {
                     tours.map(tour => <Col>
-                        <Card>
-                            <Card.Img variant="top" src={tour.img} />
+                        <Card className="text-uppercase">
+                            <Card.Img variant="top" src={tour.img} height="200px" />
                             <Card.Body>
-                                <Card.Text>
-                                    {tour.country}
-                                </Card.Text>
+                                <h6 className="text-secondary">{tour.country}</h6>
                                 <Card.Title>{tour.title}</Card.Title>
-                                <Card.Text>
-                                    {tour.duration} ${tour.price}
+                                <Card.Text className="d-flex justify-content-between">
+                                    <h6>{tour.duration}</h6>
+                                    <h6 className="text-info">${tour.price}</h6>
                                 </Card.Text>
-                                <Button variant="dark" className="w-100"> Book Now </Button>
+                                <Button variant="info" className="w-100"> Book Now </Button>
                             </Card.Body>
                         </Card>
                     </Col>)
