@@ -6,6 +6,8 @@ import NotFound from './components/NotFound/NotFound';
 import Home from './components/Home/Home';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
+import SignIn from './components/SignIn/SignIn';
+import SignUp from './components/SignUp/SignUp';
 
 function App() {
   return (
@@ -18,6 +20,12 @@ function App() {
           </Route>
           <Route path="/home">
             <Home />
+          </Route>
+          <Route path="/signIn">
+            <SignIn />
+          </Route>
+          <Route path="/signUp">
+            <SignUp />
           </Route>
           <Route path="*">
             <NotFound />
