@@ -5,7 +5,7 @@ import { Card, Col, Row } from 'react-bootstrap';
 const News = () => {
     const [newses, setNews] = useState([]);
     useEffect(() => {
-        fetch("fakeData2.json")
+        fetch("http://localhost:5000/news")
             .then(res => res.json())
             .then(data => setNews(data))
     }, [])

@@ -6,7 +6,7 @@ import { Card, Col, Row, Button } from 'react-bootstrap';
 const Tours = () => {
     const [tours, setTours] = useState([]);
     useEffect(() => {
-        fetch("fakeData.json")
+        fetch("http://localhost:5000/tours")
             .then(res => res.json())
             .then(data => setTours(data))
     }, [])

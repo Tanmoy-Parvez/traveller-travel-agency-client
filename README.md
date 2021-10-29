@@ -10,7 +10,7 @@ This site is about a travel agency which name is Traveller.Com.From this site a 
 
 or,
 
-#### To visit the server side: [Click here](https://traveller-dotcom.web.app/).
+#### To visit the server side: [Click here](https://traveller-dotcom-server.herokuapp.com/).
 
 ### Little bit description about our website:
 
