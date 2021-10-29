@@ -38,10 +38,11 @@ const Header = () => {
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="ms-auto">
                             <Nav.Item className="d-flex align-items-center navbar-item">
+                                <Link to="/home">Home</Link>
                                 {user?.email ?
                                     <div className="d-flex">
                                         <Nav.Link>
-                                            <Link to="/home">My Bookings</Link>
+                                            <Link to="/myBookings">My Bookings</Link>
                                             <Link to="/home">Manage Tours</Link>
                                             <Link to="/add">Add Tour</Link>
                                             <span className="fw-bolder text-success ms-1">{user?.displayName}</span>
@@ -50,7 +51,6 @@ const Header = () => {
                                     </div>
                                     :
                                     <Nav.Link>
-                                        <Link to="/home">Home</Link>
                                         <Button onClick={handleSignIn} variant="info" className="mx-3 rounded-pill px-4 ">Sign in</Button>
                                     </Nav.Link>
                                 }

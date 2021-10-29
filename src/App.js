@@ -11,6 +11,7 @@ import SignUp from './components/SignUp/SignUp';
 import AuthProvider from './context/AuthProvider';
 import BookingForm from './BookingForm/BookingForm';
 import AddTour from './AddTour/AddTour';
+import MyBookings from './MyBookings/MyBookings';
 
 function App() {
   return (
@@ -36,6 +37,9 @@ function App() {
             </Route>
             <Route path="/add">
               <AddTour />
+            </Route>
+            <Route path="/myBookings">
+              <MyBookings />
             </Route>
             <Route path="*">
               <NotFound />
