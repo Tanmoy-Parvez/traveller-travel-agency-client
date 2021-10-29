@@ -1,0 +1,10 @@
+.navbar-item a {
+  text-decoration: none;
+  margin-right: 15px;
+  color: rgb(3, 206, 206);
+  font-weight: bold;
+}
+
+.navbar-item a:hover {
+  color: rgb(18, 160, 160);
+}
