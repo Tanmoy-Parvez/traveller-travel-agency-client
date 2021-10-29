@@ -34,7 +34,7 @@ const AddTour = () => {
                         className="form-control w-75 mx-auto my-4"
                         placeholder="Price"
                     />
-                    <input type="submit" value="Add" className="btn btn-primary w-75 mt-3" />
+                    <input type="submit" value="Add" className="btn btn-info text-white w-75 mt-3" />
                 </form>
             </div>
         </div>

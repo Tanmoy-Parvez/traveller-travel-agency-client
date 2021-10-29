@@ -13,7 +13,7 @@ const BookingForm = () => {
         <div className="container mb-5" style={{ marginTop: "100px" }}>
             <div className="w-50 py-5 border rounded-3 mx-auto shadow-lg">
                 <img src={logo} alt="" className="w-25" />
-                <h3 className="my-3 text-uppercase">Tour Booking Form</h3>
+                <h3 className="my-3 text-uppercase text-info">Tour Booking Form</h3>
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <input
                         defaultValue={user?.displayName}
@@ -45,7 +45,7 @@ const BookingForm = () => {
                         placeholder="Activity"
                     />
 
-                    <input type="submit" className="btn btn-primary w-75 mt-4" />
+                    <input type="submit" className="btn btn-info text-white w-75 mt-4" />
                 </form>
             </div>
         </div>
