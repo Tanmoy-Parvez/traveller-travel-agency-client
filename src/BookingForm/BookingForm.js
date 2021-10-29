@@ -1,16 +1,36 @@
-import React from 'react';
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
 import { useForm } from "react-hook-form";
+import { useParams } from 'react-router';
 import useAuth from '../hooks/useAuth';
-import logo from '../images/logo.png'
+import logo from '../images/logo.png';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const BookingForm = () => {
-    const { user } = useAuth()
+    const { user } = useAuth();
+    const { id } = useParams();
+    const [tour, setTour] = useState({})
     const { register, handleSubmit, reset } = useForm();
+
+    useEffect(() => {
+        fetch(`http://localhost:5000/tour/${id}`)
+            .then(res => res.json())
+            .then(data => setTour(data))
+    }, [])
+
     const onSubmit = data => {
-        console.log(data)
+        axios.post("http://localhost:5000/booking", data)
+            .then(res => {
+                if (res.data.insertedId) {
+                    toast.dark("😃Tour Successfully Booked!")
+                    reset()
+                };
+            })
     };
     return (
         <div className="container mb-5" style={{ marginTop: "100px" }}>
+            <ToastContainer />
             <div className="w-50 py-5 border rounded-3 mx-auto shadow-lg">
                 <img src={logo} alt="" className="w-25" />
                 <h3 className="my-3 text-uppercase text-info">Tour Booking Form</h3>
@@ -39,7 +59,7 @@ const BookingForm = () => {
                         placeholder="Address"
                     />
                     <input
-                        defaultValue="title"
+                        defaultValue={tour?.title}
                         {...register("activity", { required: true })}
                         className="form-control w-75 mx-auto border-bottom border-dark border-top-0 border-start-0 border-end-0 mb-2"
                         placeholder="Activity"

@@ -33,7 +33,7 @@ function App() {
             <Route path="/signUp">
               <SignUp />
             </Route>
-            <Route path="/booking">
+            <Route path="/booking/:id">
               <BookingForm />
             </Route>
             <Route path="/add">
