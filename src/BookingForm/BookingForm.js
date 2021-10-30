@@ -14,7 +14,7 @@ const BookingForm = () => {
     const { register, handleSubmit, reset } = useForm();
 
     useEffect(() => {
-        fetch(`http://localhost:5000/tour/${id}`)
+        fetch(`https://traveller-dotcom-server.herokuapp.com/tour/${id}`)
             .then(res => res.json())
             .then(data => setTour(data))
     }, [])
@@ -23,7 +23,7 @@ const BookingForm = () => {
         data.status = "Pending";
         data.price = tour?.price;
         data.img = tour?.img;
-        axios.post("http://localhost:5000/booking", data)
+        axios.post("https://traveller-dotcom-server.herokuapp.com/booking", data)
             .then(res => {
                 if (res.data.insertedId) {
                     toast.dark("😃Tour Successfully Booked!")

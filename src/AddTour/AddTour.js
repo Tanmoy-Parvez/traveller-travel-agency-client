@@ -7,7 +7,7 @@ import { ToastContainer, toast } from 'react-toastify';
 const AddTour = () => {
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = data => {
-        axios.post("http://localhost:5000/add", data)
+        axios.post("https://traveller-dotcom-server.herokuapp.com/add", data)
             .then(res => {
                 if (res.data.insertedId) {
                     toast.dark("😃New Tour Successfully Added!")

@@ -12,7 +12,7 @@ const Tours = () => {
     const { isLoading } = useAuth()
 
     useEffect(() => {
-        fetch("http://localhost:5000/tours")
+        fetch("https://traveller-dotcom-server.herokuapp.com/tours")
             .then(res => res.json())
             .then(data => setTours(data))
     }, [])

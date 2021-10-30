@@ -3,13 +3,12 @@ import useAuth from '../hooks/useAuth';
 import { ToastContainer, toast } from 'react-toastify';
 
 
-
 const MyBookings = () => {
     const [tours, setTours] = useState([]);
     const [cancel, setCancel] = useState(false);
     const { user } = useAuth()
     useEffect(() => {
-        fetch(`http://localhost:5000/myBookings/${user?.email}`)
+        fetch(`https://traveller-dotcom-server.herokuapp.com/myBookings/${user?.email}`)
             .then(res => res.json())
             .then(data => setTours(data))
     }, [user?.email, cancel])
@@ -17,7 +16,7 @@ const MyBookings = () => {
     const handleCancel = (id) => {
         const proceed = window.confirm("Are you sure you want to cancel?");
         if (proceed) {
-            fetch(`http://localhost:5000/myBookings/${id}`, {
+            fetch(`https://traveller-dotcom-server.herokuapp.com/myBookings/${id}`, {
                 method: 'DELETE',
                 headers: { 'Content-Type': 'application/json' }
             })
@@ -30,9 +29,10 @@ const MyBookings = () => {
                 })
         }
     }
+
     return (
-        <div className="marginTop">
-            <h1 className="text-info pt-5 text-uppercase">My All Bookings</h1>
+        <div className="mt-5 pt-4">
+            <h1 className="text-info text-uppercase">My All Bookings</h1>
             <ToastContainer />
             <div className="container">
                 <div className="row my-5 gx-5 gy-2">

@@ -5,7 +5,7 @@ import { Card, Col, Row } from 'react-bootstrap';
 const News = () => {
     const [newses, setNews] = useState([]);
     useEffect(() => {
-        fetch("http://localhost:5000/news")
+        fetch("https://traveller-dotcom-server.herokuapp.com/news")
             .then(res => res.json())
             .then(data => setNews(data))
     }, [])

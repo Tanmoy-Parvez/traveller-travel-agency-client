@@ -1,5 +1,5 @@
 import React from 'react';
-import { Nav, Navbar, Button } from 'react-bootstrap';
+import { Nav, Navbar, Button, NavDropdown } from 'react-bootstrap';
 import { Link, useHistory } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 import logo from '../../images/logo.png'
@@ -39,18 +39,30 @@ const Header = () => {
                         <Nav.Item className="d-flex align-items-center navbar-item">
                             <Link to="/home">Home</Link>
                             {user?.email ?
-                                <div className="d-flex">
-                                    <Nav.Link>
-                                        <Link to="/myBookings">My Bookings</Link>
-                                        <Link to="/manageBookings">Manage Tours</Link>
-                                        <Link to="/add">Add Tour</Link>
-                                        <span className="fw-bolder text-success ms-1">{user?.displayName}</span>
-                                    </Nav.Link>
-                                    <Button onClick={logOut} variant="danger"><i className="fas fa-sign-out-alt"></i></Button>
+                                <div className="d-flex align-items-center text-info">
+                                    <NavDropdown title="Dashboard" id="basic-nav-dropdown">
+                                        <NavDropdown.Item className="bg-light">
+                                            <Link to="/myBookings">My Bookings</Link>
+                                        </NavDropdown.Item>
+                                        <NavDropdown.Item className="bg-light">
+                                            <Link to="/manageBookings">Manage Tours</Link>
+                                        </NavDropdown.Item>
+                                        <NavDropdown.Item className="bg-light">
+                                            <Link to="/add">Add Tour</Link>
+                                        </NavDropdown.Item>
+                                    </NavDropdown>
+                                    <span className="fw-bolder text-success me-3">
+                                        {user?.displayName}
+                                    </span>
+                                    <Button onClick={logOut} variant="danger">
+                                        <i className="fas fa-sign-out-alt"></i>
+                                    </Button>
                                 </div>
                                 :
                                 <Nav.Link>
-                                    <Button onClick={handleSignIn} variant="info" className="mx-3 rounded-pill px-4 ">Sign in</Button>
+                                    <Button onClick={handleSignIn} variant="info" className="rounded-pill px-4 text-white">
+                                        Sign in
+                                    </Button>
                                 </Nav.Link>
                             }
                         </Nav.Item>

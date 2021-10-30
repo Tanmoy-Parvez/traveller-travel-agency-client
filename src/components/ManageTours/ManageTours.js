@@ -7,7 +7,7 @@ const ManageTours = () => {
     const [updated, setUpdated] = useState(false);
 
     useEffect(() => {
-        fetch("http://localhost:5000/allBookings")
+        fetch("https://traveller-dotcom-server.herokuapp.com/allBookings")
             .then(res => res.json())
             .then(data => setAllBookings(data))
     }, [cancel, updated])
@@ -15,7 +15,7 @@ const ManageTours = () => {
     const handleCancel = (id) => {
         const proceed = window.confirm("Are you sure you want to cancel?");
         if (proceed) {
-            fetch(`http://localhost:5000/allBookings/${id}`, {
+            fetch(`https://traveller-dotcom-server.herokuapp.com/allBookings/${id}`, {
                 method: 'DELETE',
                 headers: { 'Content-Type': 'application/json' }
             })
@@ -33,12 +33,12 @@ const ManageTours = () => {
     const [tour, setTour] = useState({});
 
     const handleApproved = (id) => {
-        fetch(`http://localhost:5000/allBookings/${id}`)
+        fetch(`https://traveller-dotcom-server.herokuapp.com/allBookings/${id}`)
             .then((res) => res.json())
             .then((data) => setTour(data));
         setTour(tour.status = "Approved");
 
-        fetch(`http://localhost:5000/allBookings/${id}`, {
+        fetch(`https://traveller-dotcom-server.herokuapp.com/allBookings/${id}`, {
             method: "PUT",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(tour),
@@ -52,10 +52,12 @@ const ManageTours = () => {
             });
     }
 
-
     return (
         <div className="px-2 marginTop mb-5">
-            <h1 className="pt-5">Manage All The Booking Tours</h1>
+            <h4 className="text-warning text-uppercase pt-2">
+                <i>All the booked tours are below</i>
+            </h4>
+            <h1 className="text-info text-uppercase">Manage All The Booking Tours</h1>
             <Table striped bordered hover variant="dark" style={{ margin: "70px 0px" }}>
                 <thead>
                     <tr>
