@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import useAuth from '../hooks/useAuth';
 import { ToastContainer, toast } from 'react-toastify';
 import { Spinner } from 'react-bootstrap';
+import Zoom from 'react-reveal/Zoom';
 
 
 const MyBookings = () => {
@@ -43,8 +44,9 @@ const MyBookings = () => {
                                 <Spinner animation="border" variant="info" />
                             </div>
                             :
-                            tours.map(tour => <div className="col-md-6">
+                            tours.map(tour => <Zoom> <div className="col-md-6">
                                 <div className="card mb-3">
+
                                     <div className="row">
                                         <div className="col-md-5">
                                             <img src={tour?.img} className="w-100" height="100%" alt="..." />
@@ -60,7 +62,8 @@ const MyBookings = () => {
                                         </div>
                                     </div>
                                 </div>
-                            </div>)
+                            </div>
+                            </Zoom>)
                     }
                 </div>
             </div>

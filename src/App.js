@@ -8,7 +8,6 @@ import Home from './components/Home/Home';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import SignIn from './components/SignIn/SignIn';
-import SignUp from './components/SignUp/SignUp';
 import AuthProvider from './context/AuthProvider';
 import BookingForm from './BookingForm/BookingForm';
 import AddTour from './AddTour/AddTour';
@@ -31,9 +30,6 @@ function App() {
             </Route>
             <Route path="/signIn">
               <SignIn />
-            </Route>
-            <Route path="/signUp">
-              <SignUp />
             </Route>
             <PrivateRoute path="/booking/:id">
               <BookingForm />

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, useHistory, useLocation } from 'react-router-dom';
+import { useHistory, useLocation } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 import logo from '../../images/logo.png'
 
@@ -20,9 +20,9 @@ const SignIn = () => {
         <div className="container mb-5" style={{ marginTop: "100px" }}>
             <div className="w-50 mt-5 border mx-auto shadow-lg py-5">
                 <img src={logo} alt="" className="w-25" />
-                <h3 className="my-3">Sign in With</h3>
+                <h4 className="my-3 text-uppercase text-info">Explore More By Sign in</h4>
                 <button onClick={handleGoogleSignIn} className="btn btn-outline-dark rounded-pill w-75"> <img src="https://img.icons8.com/color/48/000000/google-logo.png" alt="" width="25" className="" /> Continue with Google</button>
-                <p className="my-3">Don't have an account? <Link to="/signUp" style={{ textDecoration: "none" }}>Create an account</Link></p>
+                <p className="my-3">Let us help you explore more.</p>
             </div>
         </div>
     );

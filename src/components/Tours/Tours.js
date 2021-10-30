@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import { Card, Col, Row, Button, Spinner } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
-import useAuth from '../../hooks/useAuth';
+import Zoom from 'react-reveal/Zoom';
 
 
 const Tours = () => {
@@ -27,23 +27,25 @@ const Tours = () => {
             {tours.length ?
                 <Row xs={1} md={3} className="g-5 mt-3 text-start">
                     {
-                        tours.map(tour => <Col>
-                            <Card className="text-uppercase">
-                                <Card.Img variant="top" src={tour?.img} height="200px" />
-                                <Card.Body>
-                                    <h6 className="text-secondary">{tour.country}</h6>
-                                    <Card.Title>{tour?.title}</Card.Title>
-                                    <Card.Text>
-                                        <p className="text-secondary">{tour?.description}</p>
-                                    </Card.Text>
-                                    <Card.Text className="d-flex justify-content-between">
-                                        <h6>{tour?.duration}</h6>
-                                        <h6 className="text-info">${tour?.price}</h6>
-                                    </Card.Text>
-                                    <Button onClick={() => handleBooking(tour._id)} variant="info" className="w-100 text-uppercase text-white fw-bold"> Book Now </Button>
-                                </Card.Body>
-                            </Card>
-                        </Col>)
+                        tours.map(tour => <Zoom>
+                            <Col>
+                                <Card className="text-uppercase border-0 shadow-lg">
+                                    <Card.Img variant="top" src={tour?.img} className="p-1" height="200px" />
+                                    <Card.Body>
+                                        <h6 className="text-secondary">{tour.country}</h6>
+                                        <Card.Title>{tour?.title}</Card.Title>
+                                        <Card.Text>
+                                            <p className="text-secondary">{tour?.description}</p>
+                                        </Card.Text>
+                                        <Card.Text className="d-flex justify-content-between">
+                                            <h6>{tour?.duration}</h6>
+                                            <h6 className="text-info">${tour?.price}</h6>
+                                        </Card.Text>
+                                        <Button onClick={() => handleBooking(tour._id)} variant="info" className="w-100 text-uppercase text-white fw-bold"> Book Now </Button>
+                                    </Card.Body>
+                                </Card>
+                            </Col>
+                        </Zoom>)
                     }
                 </Row>
                 :
