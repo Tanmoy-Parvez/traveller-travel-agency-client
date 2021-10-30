@@ -1,14 +1,23 @@
+import axios from 'axios';
 import React from 'react';
 import { useForm } from "react-hook-form";
-import logo from '../images/logo.png'
+import logo from '../images/logo.png';
+import { ToastContainer, toast } from 'react-toastify';
 
 const AddTour = () => {
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = data => {
-        console.log(data)
+        axios.post("http://localhost:5000/add", data)
+            .then(res => {
+                if (res.data.insertedId) {
+                    toast.dark("😃New Tour Successfully Added!")
+                    reset()
+                };
+            })
     };
     return (
         <div className="container mb-5" style={{ marginTop: "100px" }}>
+            <ToastContainer />
             <div className="w-50 pb-5 pt-3 border rounded-3 mx-auto shadow-lg">
                 <img src={logo} alt="" className="w-25" />
                 <h3 className="my-4 text-uppercase text-info">Add New Tour Form</h3>

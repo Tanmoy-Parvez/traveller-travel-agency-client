@@ -27,16 +27,16 @@ const Header = () => {
                         <img
                             src={logo}
                             width="50"
-                            height="50"
+                            height="45"
                             className="d-inline-block align-top"
                             alt="React Bootstrap logo"
                         />
-                        <h2 className="fw-normal ms-1">Traveller.Com</h2>
+                        <h2 className="fw-bold ms-1 text-info ">Traveller.Com</h2>
                     </Navbar.Brand>
                     {/* menu options */}
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
-                        <Nav className="ms-auto">
+                        <Nav className="ms-auto text-uppercase">
                             <Nav.Item className="d-flex align-items-center navbar-item">
                                 <Link to="/home">Home</Link>
                                 {user?.email ?

@@ -17,7 +17,7 @@ import ManageTours from './components/ManageTours/ManageTours';
 
 function App() {
   return (
-    <div className="App">
+    <div className="App overflow-hidden">
       <AuthProvider>
         <Router>
           <Header />

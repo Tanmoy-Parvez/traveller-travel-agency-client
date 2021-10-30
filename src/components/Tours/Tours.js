@@ -33,7 +33,7 @@ const Tours = () => {
                                     <h6>{tour.duration}</h6>
                                     <h6 className="text-info">${tour.price}</h6>
                                 </Card.Text>
-                                <Button onClick={() => handleBooking(tour._id)} variant="info" className="w-100"> Book Now </Button>
+                                <Button onClick={() => handleBooking(tour._id)} variant="info" className="w-100 text-uppercase text-white fw-bold"> Book Now </Button>
                             </Card.Body>
                         </Card>
                     </Col>)
