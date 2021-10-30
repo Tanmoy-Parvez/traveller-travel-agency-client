@@ -33,14 +33,19 @@ const AddTour = () => {
                         placeholder="Country or city"
                     />
                     <input
-                        {...register("duration", { required: true })}
+                        {...register("description", { required: true })}
                         className="form-control w-75 mx-auto"
+                        placeholder="Description"
+                    />
+                    <input
+                        {...register("duration", { required: true })}
+                        className="form-control w-75 mx-auto  my-4"
                         placeholder="Duration"
                     />
                     <input
                         type="number"
                         {...register("price", { required: true })}
-                        className="form-control w-75 mx-auto my-4"
+                        className="form-control w-75 mx-auto"
                         placeholder="Price"
                     />
                     <input

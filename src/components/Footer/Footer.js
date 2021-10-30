@@ -13,7 +13,7 @@ const Footer = () => {
                 {/* location info */}
                 <div className="col-md-4 col-12 text-start ps-5">
                     <h4 className="text-uppercase text-info">Traveller.Com</h4>
-                    <h6 className="fw-normal">AR Tower 2nd Floor, Dhaka, Bangladesh.</h6>
+                    <h6 className="fw-normal">Khan Tower 2nd Floor, Dhaka, Bangladesh.</h6>
                     <h6 className="fw-normal">Official: tc@gmail.com</h6>
                     <h6 className="fw-normal">(Available : 09:00am to 10:00pm)</h6>
                 </div>
