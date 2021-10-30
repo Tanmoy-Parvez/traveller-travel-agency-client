@@ -9,7 +9,7 @@ const PrivateRoute = ({ children, ...rest }) => {
     // loading spinner
     if (isLoading) {
         return <div className="text-center my-5">
-            <Spinner animation="border" variant="primary" />
+            <Spinner animation="border" variant="info" />
         </div>
     }
     // private or protected route function

@@ -1,13 +1,16 @@
 import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
-import { Card, Col, Row, Button } from 'react-bootstrap';
+import { Card, Col, Row, Button, Spinner } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
+import useAuth from '../../hooks/useAuth';
 
 
 const Tours = () => {
     const history = useHistory();
     const [tours, setTours] = useState([]);
+    const { isLoading } = useAuth()
+
     useEffect(() => {
         fetch("http://localhost:5000/tours")
             .then(res => res.json())
@@ -15,6 +18,11 @@ const Tours = () => {
     }, [])
     const handleBooking = id => {
         history.push(`/booking/${id}`)
+    }
+    if (isLoading) {
+        return <div className="text-center my-5">
+            <Spinner animation="border" variant="info" />
+        </div>
     }
     return (
         <div className="my-5 container">

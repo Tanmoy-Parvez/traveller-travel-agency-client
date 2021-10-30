@@ -22,7 +22,7 @@ const Footer = () => {
                     <h4 className="text-uppercase">Know More</h4>
                     <h6><Link to="/home">Home</Link></h6>
                     <h6><Link to="/signIn">Sign in</Link></h6>
-                    <h6><Link to="/booking">Booking</Link></h6>
+                    <h6><Link to="/manageBookings">Manage Booking</Link></h6>
                     <h6><Link to="/">Travel News</Link></h6>
                 </div>
                 <div className="col-md-3 col-12 text-start ps-3">
