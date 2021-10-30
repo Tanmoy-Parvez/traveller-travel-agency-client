@@ -9,7 +9,6 @@ import useAuth from '../../hooks/useAuth';
 const Tours = () => {
     const history = useHistory();
     const [tours, setTours] = useState([]);
-    const { isLoading } = useAuth()
 
     useEffect(() => {
         fetch("https://traveller-dotcom-server.herokuapp.com/tours")
@@ -19,37 +18,39 @@ const Tours = () => {
     const handleBooking = id => {
         history.push(`/booking/${id}`)
     }
-    if (isLoading) {
-        return <div className="text-center my-5">
-            <Spinner animation="border" variant="danger" />
-        </div>
-    }
+
     return (
         <div className="my-5 container">
             <h5 className="text-info"><i>Around the world</i></h5>
             <h1>BEST TRAVEL PACKAGES AVAILABLE</h1>
             <h3>CHOOSE YOUR DESTINATION</h3>
-            <Row xs={1} md={3} className="g-5 mt-3 text-start">
-                {
-                    tours.map(tour => <Col>
-                        <Card className="text-uppercase">
-                            <Card.Img variant="top" src={tour?.img} height="200px" />
-                            <Card.Body>
-                                <h6 className="text-secondary">{tour.country}</h6>
-                                <Card.Title>{tour?.title}</Card.Title>
-                                <Card.Text>
-                                    <p className="text-secondary">{tour?.description}</p>
-                                </Card.Text>
-                                <Card.Text className="d-flex justify-content-between">
-                                    <h6>{tour?.duration}</h6>
-                                    <h6 className="text-info">${tour?.price}</h6>
-                                </Card.Text>
-                                <Button onClick={() => handleBooking(tour._id)} variant="info" className="w-100 text-uppercase text-white fw-bold"> Book Now </Button>
-                            </Card.Body>
-                        </Card>
-                    </Col>)
-                }
-            </Row>
+            {tours.length ?
+                <Row xs={1} md={3} className="g-5 mt-3 text-start">
+                    {
+                        tours.map(tour => <Col>
+                            <Card className="text-uppercase">
+                                <Card.Img variant="top" src={tour?.img} height="200px" />
+                                <Card.Body>
+                                    <h6 className="text-secondary">{tour.country}</h6>
+                                    <Card.Title>{tour?.title}</Card.Title>
+                                    <Card.Text>
+                                        <p className="text-secondary">{tour?.description}</p>
+                                    </Card.Text>
+                                    <Card.Text className="d-flex justify-content-between">
+                                        <h6>{tour?.duration}</h6>
+                                        <h6 className="text-info">${tour?.price}</h6>
+                                    </Card.Text>
+                                    <Button onClick={() => handleBooking(tour._id)} variant="info" className="w-100 text-uppercase text-white fw-bold"> Book Now </Button>
+                                </Card.Body>
+                            </Card>
+                        </Col>)
+                    }
+                </Row>
+                :
+                <div className="fs-5 my-5">
+                    <Spinner animation="border" variant="info" />
+                </div>
+            }
 
         </div>
     );
