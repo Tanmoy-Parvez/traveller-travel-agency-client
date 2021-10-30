@@ -51,7 +51,7 @@ const Header = () => {
                                             <Link to="/add">Add Tour</Link>
                                         </NavDropdown.Item>
                                     </NavDropdown>
-                                    <span className="fw-bolder text-success me-3">
+                                    <span className="fw-bolder text-danger me-3">
                                         {user?.displayName}
                                     </span>
                                     <Button onClick={logOut} variant="danger">

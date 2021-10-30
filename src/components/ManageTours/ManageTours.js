@@ -79,8 +79,8 @@ const ManageTours = () => {
                                 <td className="text-uppercase">{allBooking?.title}</td>
                                 <td className="text-uppercase">{allBooking?.status}</td>
                                 <td>
-                                    <button onClick={() => handleApproved(allBooking?._id)} className="btn btn-success me-3">Approve</button>
-                                    <button onClick={() => handleCancel(allBooking?._id)} className="btn btn-danger">Cancel</button>
+                                    <button onClick={() => handleApproved(allBooking?._id)} className="btn btn-success me-3"><i className="fas fa-check"></i></button>
+                                    <button onClick={() => handleCancel(allBooking?._id)} className="btn btn-danger"><i className="fas fa-times"></i></button>
                                 </td>
                             </tr>
                         )
