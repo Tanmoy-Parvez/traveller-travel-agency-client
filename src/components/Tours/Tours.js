@@ -21,7 +21,7 @@ const Tours = () => {
     }
     if (isLoading) {
         return <div className="text-center my-5">
-            <Spinner animation="border" variant="info" />
+            <Spinner animation="border" variant="danger" />
         </div>
     }
     return (
