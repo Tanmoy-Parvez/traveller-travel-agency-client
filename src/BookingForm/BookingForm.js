@@ -20,6 +20,9 @@ const BookingForm = () => {
     }, [])
 
     const onSubmit = data => {
+        data.status = "pending";
+        data.price = tour?.price;
+        data.img = tour?.img;
         axios.post("http://localhost:5000/booking", data)
             .then(res => {
                 if (res.data.insertedId) {

@@ -34,6 +34,11 @@ const AddTour = () => {
                         className="form-control w-75 mx-auto my-4"
                         placeholder="Price"
                     />
+                    <input
+                        {...register("img", { required: true })}
+                        className="form-control w-75 mx-auto my-4"
+                        placeholder="Image Url"
+                    />
                     <input type="submit" value="Add" className="btn btn-info text-white w-75 mt-3" />
                 </form>
             </div>
