@@ -5,7 +5,7 @@ import { useParams } from 'react-router';
 import useAuth from '../hooks/useAuth';
 import logo from '../images/logo.png';
 import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+
 
 const BookingForm = () => {
     const { user } = useAuth();
