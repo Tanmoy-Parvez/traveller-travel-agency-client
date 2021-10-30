@@ -14,6 +14,7 @@ import BookingForm from './BookingForm/BookingForm';
 import AddTour from './AddTour/AddTour';
 import MyBookings from './MyBookings/MyBookings';
 import ManageTours from './components/ManageTours/ManageTours';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 
 function App() {
   return (
@@ -34,18 +35,18 @@ function App() {
             <Route path="/signUp">
               <SignUp />
             </Route>
-            <Route path="/booking/:id">
+            <PrivateRoute path="/booking/:id">
               <BookingForm />
-            </Route>
-            <Route path="/add">
+            </PrivateRoute>
+            <PrivateRoute path="/add">
               <AddTour />
-            </Route>
-            <Route path="/myBookings">
+            </PrivateRoute>
+            <PrivateRoute path="/myBookings">
               <MyBookings />
-            </Route>
-            <Route path="/manageBookings">
+            </PrivateRoute>
+            <PrivateRoute path="/manageBookings">
               <ManageTours />
-            </Route>
+            </PrivateRoute>
             <Route path="*">
               <NotFound />
             </Route>
