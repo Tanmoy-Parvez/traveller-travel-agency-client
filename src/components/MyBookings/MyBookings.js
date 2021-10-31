@@ -29,7 +29,7 @@ const MyBookings = () => {
                 .then(data => {
                     if (data.deletedCount > 0) {
                         toast.warn("Booking successfully cancelled!")
-                        setCancel(true)
+                        setCancel(!cancel)
                     };
                 })
         }

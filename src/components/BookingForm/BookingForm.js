@@ -61,18 +61,18 @@ const BookingForm = () => {
                         <img src={logo} alt="" className="w-25" />
                         <h3 className="my-3 text-uppercase text-info">Tour Booking Form</h3>
                         <form onSubmit={handleSubmit(onSubmit)}>
-                            <input
+                            {user?.displayName && <input
                                 defaultValue={user?.displayName}
                                 {...register("fullName", { required: true })}
                                 className="form-control w-75 mx-auto border-bottom border-dark border-top-0 border-start-0 border-end-0"
                                 placeholder="Full Name"
-                            />
-                            <input
+                            />}
+                            {user?.email && <input
                                 defaultValue={user?.email}
                                 {...register("email", { required: true })}
                                 className="form-control w-75 mx-auto border-bottom border-dark border-top-0 border-start-0 border-end-0 my-3"
                                 placeholder="Username or email"
-                            />
+                            />}
                             <input
                                 type="date"
                                 {...register("date", { required: true })}
@@ -86,13 +86,12 @@ const BookingForm = () => {
                                 placeholder="Address"
                             />
                             {errors.address && <span className="text-danger">*This field is required</span>}
-                            <input
+                            {tour?.title && <input
                                 defaultValue={tour?.title}
                                 {...register("title", { required: true })}
                                 className="form-control w-75 mx-auto border-bottom border-dark border-top-0 border-start-0 border-end-0 mt-3 "
                                 placeholder="Tour title"
-                            />
-                            {errors.title && <span className="text-info">If is it ok? Then press book</span>}
+                            />}
                             <input type="submit" value="Book" className="btn btn-info text-white w-75 mt-4" />
                         </form>
                     </div>
