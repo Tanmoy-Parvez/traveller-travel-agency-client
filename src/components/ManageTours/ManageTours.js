@@ -53,14 +53,14 @@ const ManageTours = () => {
     }
 
     return (
-        <div className="px-4 marginTop mb-5">
+        <div className="px-2 marginTop mb-5">
             <h4 className="text-warning text-uppercase pt-2 mb-3">
                 <i>All the booked tours are below</i>
             </h4>
             <h1 className="text-info text-uppercase">Manage All The Booking Tours</h1>
-            <div className="row">
-                <div className="col-md-12 col-12">
-                    <Table responsive="md" striped bordered hover variant="dark" style={{ margin: "60px 0px" }}>
+            <div className="row container-fluid">
+                <div className="col-md-12 col-12 ">
+                    <Table responsive="sm" striped bordered hover variant="dark" style={{ margin: "60px 0px" }}>
                         <thead>
                             <tr>
                                 <th>No</th>
