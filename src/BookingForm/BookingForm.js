@@ -51,7 +51,7 @@ const BookingForm = () => {
                                 <h4>{tour?.duration}</h4>
                                 <h4 className="text-warning">${tour?.price}</h4>
                             </Card.Text>
-                            <h2 className="text-info mt-4">Please Fill the form</h2>
+                            <h5 className="text-white mt-4 bg-info py-2">Please Fill the booking form</h5>
                         </Card.Body>
                     </Card>
                 </div>
