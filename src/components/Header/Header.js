@@ -36,11 +36,11 @@ const Header = () => {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ms-auto text-uppercase">
-                        <Nav.Item className="d-flex align-items-center navbar-item">
+                        <Nav.Item className="d-flex align-items-center justify-content-center navbar-item">
                             <Link to="/home">Home</Link>
                             {user?.email ?
                                 <div className="d-flex align-items-center text-info">
-                                    <NavDropdown title="Dashboard" id="basic-nav-dropdown">
+                                    <NavDropdown className="mx-1" title="Dashboard" id="basic-nav-dropdown">
                                         <NavDropdown.Item className="bg-light">
                                             <Link to="/myBookings">My Bookings</Link>
                                         </NavDropdown.Item>
@@ -60,7 +60,7 @@ const Header = () => {
                                 </div>
                                 :
                                 <Nav.Link>
-                                    <Button onClick={handleSignIn} variant="info" className="rounded-pill px-4 text-white">
+                                    <Button onClick={handleSignIn} variant="info" className="rounded-pill px-4 ms-2 text-white">
                                         Sign in
                                     </Button>
                                 </Nav.Link>

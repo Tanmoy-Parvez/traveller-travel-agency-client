@@ -15,3 +15,7 @@
 .nav-item a:hover {
   color: rgb(6, 201, 201);
 }
+
+.header-title {
+  font-size: 3rem;
+}

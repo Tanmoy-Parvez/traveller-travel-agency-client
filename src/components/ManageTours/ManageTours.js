@@ -23,7 +23,7 @@ const ManageTours = () => {
                 .then(data => {
                     if (data.deletedCount > 0) {
                         alert("Booking successfully cancelled!")
-                        setCancel(true)
+                        setCancel(!cancel)
                     };
                 })
         }
@@ -54,11 +54,11 @@ const ManageTours = () => {
 
     return (
         <div className="px-2 marginTop mb-5">
-            <h4 className="text-warning text-uppercase pt-2">
+            <h4 className="text-warning text-uppercase pt-2 mb-3">
                 <i>All the booked tours are below</i>
             </h4>
             <h1 className="text-info text-uppercase">Manage All The Booking Tours</h1>
-            <Table striped bordered hover variant="dark" style={{ margin: "70px 0px" }}>
+            <Table striped bordered hover variant="dark" style={{ margin: "60px 0px" }}>
                 <thead>
                     <tr>
                         <th>No</th>
