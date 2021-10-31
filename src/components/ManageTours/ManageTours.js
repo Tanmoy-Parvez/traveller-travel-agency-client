@@ -60,7 +60,7 @@ const ManageTours = () => {
             <h1 className="text-info text-uppercase">Manage All The Booking Tours</h1>
             <div className="row">
                 <div className="col-md-12 col-12">
-                    <Table striped bordered hover variant="dark" style={{ margin: "60px 0px" }}>
+                    <Table responsive="md" striped bordered hover variant="dark" style={{ margin: "60px 0px" }}>
                         <thead>
                             <tr>
                                 <th>No</th>
