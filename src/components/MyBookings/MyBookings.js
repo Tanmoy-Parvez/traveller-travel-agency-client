@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import useAuth from '../hooks/useAuth';
+import useAuth from '../../hooks/useAuth';
 import { ToastContainer, toast } from 'react-toastify';
 import { Spinner } from 'react-bootstrap';
 import Zoom from 'react-reveal/Zoom';
@@ -8,13 +8,16 @@ import Zoom from 'react-reveal/Zoom';
 const MyBookings = () => {
     const [tours, setTours] = useState([]);
     const [cancel, setCancel] = useState(false);
-    const { user } = useAuth()
+    const { user } = useAuth();
+
+    // load all data from data source
     useEffect(() => {
         fetch(`https://traveller-dotcom-server.herokuapp.com/myBookings/${user?.email}`)
             .then(res => res.json())
             .then(data => setTours(data))
     }, [user?.email, cancel])
 
+    // cancel function
     const handleCancel = (id) => {
         const proceed = window.confirm("Are you sure you want to cancel?");
         if (proceed) {
@@ -31,7 +34,7 @@ const MyBookings = () => {
                 })
         }
     }
-
+    // my bookings section
     return (
         <div className="mt-5 pt-4">
             <h1 className="text-info text-uppercase">My All Bookings</h1>

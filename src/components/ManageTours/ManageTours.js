@@ -12,6 +12,7 @@ const ManageTours = () => {
             .then(data => setAllBookings(data))
     }, [cancel, updated])
 
+    // handle cancel booking function
     const handleCancel = (id) => {
         const proceed = window.confirm("Are you sure you want to cancel?");
         if (proceed) {
@@ -31,7 +32,7 @@ const ManageTours = () => {
 
     // update status
     const [tour, setTour] = useState({});
-
+    // handle update status function
     const handleApproved = (id) => {
         fetch(`https://traveller-dotcom-server.herokuapp.com/allBookings/${id}`)
             .then((res) => res.json())
@@ -51,13 +52,14 @@ const ManageTours = () => {
                 }
             });
     }
-
+    // manage all bookings section
     return (
         <div className="px-2 marginTop mb-5">
             <h4 className="text-warning text-uppercase pt-2 mb-4">
                 <i>All the booked tours are below</i>
             </h4>
             <h1 className="text-info text-uppercase">Manage All The Booking Tours</h1>
+            {/* table for storing info */}
             <Table responsive="sm" striped bordered hover variant="dark" className="mt-5">
                 <thead>
                     <tr>

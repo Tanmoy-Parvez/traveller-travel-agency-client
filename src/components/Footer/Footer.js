@@ -25,6 +25,7 @@ const Footer = () => {
                     <h6><Link to="/manageBookings">Manage Booking</Link></h6>
                     <h6><Link to="/">Travel News</Link></h6>
                 </div>
+                {/* info */}
                 <div className="col-md-3 col-12 text-start ps-3 mt-4">
                     <h4 className="text-uppercase">Have Questions ?</h4>
                     <h5 className="text-info">+88013-111-2233</h5>

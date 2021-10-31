@@ -9,11 +9,11 @@ import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import SignIn from './components/SignIn/SignIn';
 import AuthProvider from './context/AuthProvider';
-import BookingForm from './BookingForm/BookingForm';
-import AddTour from './AddTour/AddTour';
-import MyBookings from './MyBookings/MyBookings';
 import ManageTours from './components/ManageTours/ManageTours';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
+import AddTour from './components/AddTour/AddTour';
+import BookingForm from './components/BookingForm/BookingForm';
+import MyBookings from './components/MyBookings/MyBookings';
 
 function App() {
   return (

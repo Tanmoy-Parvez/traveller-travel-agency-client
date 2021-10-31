@@ -5,6 +5,7 @@ import Subscribe from '../Subscribe/Subscribe';
 import Tours from '../Tours/Tours';
 
 const Home = () => {
+    // home section
     return (
         <div className="marginTop">
             <Banner />

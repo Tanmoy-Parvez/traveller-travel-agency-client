@@ -5,11 +5,15 @@ import Fade from 'react-reveal/Fade';
 
 const News = () => {
     const [newses, setNews] = useState([]);
+
+    // load data from data source
     useEffect(() => {
         fetch("https://traveller-dotcom-server.herokuapp.com/news")
             .then(res => res.json())
             .then(data => setNews(data))
     }, [])
+
+    // extra section-1
     return (
         <div className="my-5 container">
             <h5 className="text-info"><i>Check Out Our</i></h5>

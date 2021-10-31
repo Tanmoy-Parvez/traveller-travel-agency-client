@@ -17,7 +17,7 @@ const Header = () => {
     const handleNavbarBand = () => {
         history.push("/home")
     }
-    // navigation menu bar
+    //  menu bar
     return (
         <>
             <Navbar collapseOnSelect expand="lg" className="fixed-top bg-light px-4">

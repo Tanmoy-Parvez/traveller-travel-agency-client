@@ -9,16 +9,18 @@ import Zoom from 'react-reveal/Zoom';
 const Tours = () => {
     const history = useHistory();
     const [tours, setTours] = useState([]);
-
+    // load all data from data source
     useEffect(() => {
         fetch("https://traveller-dotcom-server.herokuapp.com/tours")
             .then(res => res.json())
             .then(data => setTours(data))
     }, [])
+
+    // handle booking function
     const handleBooking = id => {
         history.push(`/booking/${id}`)
     }
-
+    // all tour or services section
     return (
         <div className="my-5 container">
             <h5 className="text-info"><i>Around the world</i></h5>

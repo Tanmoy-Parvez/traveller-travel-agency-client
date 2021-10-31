@@ -10,12 +10,14 @@ const SignIn = () => {
     const location = useLocation();
     const redirect_url = location.state?.from || '/home';
 
+    // google sign in method
     const handleGoogleSignIn = () => {
         googleSignIn()
             .then((result) => {
                 history.push(redirect_url);
             })
     }
+    // authentication section
     return (
         <div className="container mb-5" style={{ marginTop: "100px" }}>
             <div className="row">

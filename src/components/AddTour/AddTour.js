@@ -1,12 +1,13 @@
 import axios from 'axios';
 import React from 'react';
 import { useForm } from "react-hook-form";
-import logo from '../images/logo.png';
+import logo from '../../images/logo.png';
 import { ToastContainer, toast } from 'react-toastify';
 import Jump from 'react-reveal/Jump';
 
 const AddTour = () => {
     const { register, handleSubmit, reset } = useForm();
+
     const onSubmit = data => {
         axios.post("https://traveller-dotcom-server.herokuapp.com/add", data)
             .then(res => {
@@ -16,6 +17,8 @@ const AddTour = () => {
                 };
             })
     };
+
+    // add new tour section
     return (
         <div className="container mb-5" style={{ marginTop: "100px" }}>
             <ToastContainer />

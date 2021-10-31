@@ -2,7 +2,9 @@ import React from 'react';
 import { Form, FormControl, Button } from 'react-bootstrap';
 import "./Subscribe.css";
 import Flip from 'react-reveal/Flip';
+
 const Subscribe = () => {
+    // extra section2
     return (
         <div className="subscribe-sec px-3 d-flex align-items-center justify-content-center">
             <div>

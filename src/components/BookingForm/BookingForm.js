@@ -2,15 +2,15 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useForm } from "react-hook-form";
 import { useParams } from 'react-router';
-import useAuth from '../hooks/useAuth';
-import logo from '../images/logo.png';
+import useAuth from '../../hooks/useAuth';
+import logo from '../../images/logo.png';
 import { ToastContainer, toast } from 'react-toastify';
 import { Card } from 'react-bootstrap';
 
 
 const BookingForm = () => {
-    const { user } = useAuth();
     const { id } = useParams();
+    const { user } = useAuth();
     const [tour, setTour] = useState({})
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
 
@@ -32,6 +32,7 @@ const BookingForm = () => {
                 };
             })
     };
+    // booking section
     return (
         <div className="container mb-5" style={{ marginTop: "100px" }}>
             <ToastContainer />
