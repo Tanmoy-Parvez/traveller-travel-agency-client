@@ -40,30 +40,31 @@ const MyBookings = () => {
                 <div className="row my-5 gx-5 gy-2">
                     {
                         !tours.length ?
-                            <div className="fs-5 my-5">
+                            <div className="fs-5 my-5 col-md-12">
                                 <Spinner animation="border" variant="info" />
                             </div>
                             :
-                            tours.map(tour => <Zoom> <div className="col-md-6">
-                                <div className="card mb-3">
-
-                                    <div className="row">
-                                        <div className="col-md-5">
-                                            <img src={tour?.img} className="w-100" height="100%" alt="..." />
-                                        </div>
-                                        <div className="col-md-7">
-                                            <div className="card-body text-start">
-                                                <h5 className="card-title text-uppercase">{tour?.title}</h5>
-                                                <h6 className="text-secondary text-uppercase">Booking Date: {tour?.date}</h6>
-                                                <h6 className="card-text"> <span className="me-5 fw-bold text-info"> ${tour?.price}</span> Status: <span className="text-danger fw-bold">{tour?.status}</span>
-                                                </h6>
-                                                <button onClick={() => handleCancel(tour?._id)} className="btn btn-danger">Cancel</button>
+                            tours.map(tour => <div className="col-md-6">
+                                <Zoom>
+                                    <div className="card mb-3">
+                                        <div className="row">
+                                            <div className="col-md-5">
+                                                <img src={tour?.img} className="w-100" height="100%" alt="..." />
+                                            </div>
+                                            <div className="col-md-7">
+                                                <div className="card-body text-start">
+                                                    <h5 className="card-title text-uppercase">{tour?.title}</h5>
+                                                    <h6 className="text-secondary text-uppercase">Booking Date: {tour?.date}</h6>
+                                                    <h6 className="card-text"> <span className="me-5 fw-bold text-info"> ${tour?.price}</span> Status: <span className="text-danger fw-bold">{tour?.status}</span>
+                                                    </h6>
+                                                    <button onClick={() => handleCancel(tour?._id)} className="btn btn-danger">Cancel</button>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </Zoom>
                             </div>
-                            </Zoom>)
+                            )
                     }
                 </div>
             </div>
