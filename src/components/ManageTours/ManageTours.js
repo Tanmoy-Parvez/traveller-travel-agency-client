@@ -47,7 +47,7 @@ const ManageTours = () => {
             .then((data) => {
                 if (data.modifiedCount > 0) {
                     alert("Booking Approved successfully!");
-                    setUpdated(true)
+                    setUpdated(!updated)
                 }
             });
     }

@@ -12,7 +12,7 @@ const BookingForm = () => {
     const { user } = useAuth();
     const { id } = useParams();
     const [tour, setTour] = useState({})
-    const { register, handleSubmit, reset } = useForm();
+    const { register, handleSubmit, reset, formState: { errors } } = useForm();
 
     useEffect(() => {
         fetch(`https://traveller-dotcom-server.herokuapp.com/tour/${id}`)
@@ -69,7 +69,7 @@ const BookingForm = () => {
                             <input
                                 defaultValue={user?.email}
                                 {...register("email", { required: true })}
-                                className="form-control w-75 mx-auto border-bottom border-dark border-top-0 border-start-0 border-end-0 my-4"
+                                className="form-control w-75 mx-auto border-bottom border-dark border-top-0 border-start-0 border-end-0 my-3"
                                 placeholder="Username or email"
                             />
                             <input
@@ -78,18 +78,21 @@ const BookingForm = () => {
                                 className="form-control w-75 mx-auto border-bottom border-dark border-top-0 border-start-0 border-end-0"
                                 placeholder="Date"
                             />
+                            {errors.date && <span className="text-danger">*Give the booking date</span>}
                             <input
                                 {...register("address", { required: true })}
-                                className="form-control w-75 mx-auto border-bottom border-dark border-top-0 border-start-0 border-end-0 my-4"
+                                className="form-control w-75 mx-auto border-bottom border-dark border-top-0 border-start-0 border-end-0 mt-3"
                                 placeholder="Address"
                             />
+                            {errors.address && <span className="text-danger">*This field is required</span>}
                             <input
                                 defaultValue={tour?.title}
                                 {...register("title", { required: true })}
-                                className="form-control w-75 mx-auto border-bottom border-dark border-top-0 border-start-0 border-end-0 mb-2"
-                                placeholder="Activity"
+                                className="form-control w-75 mx-auto border-bottom border-dark border-top-0 border-start-0 border-end-0 mt-3 "
+                                placeholder="Tour title"
                             />
-                            <input type="submit" className="btn btn-info text-white w-75 mt-4" />
+                            {errors.title && <span className="text-info">If is it ok? Then press book</span>}
+                            <input type="submit" value="Book" className="btn btn-info text-white w-75 mt-4" />
                         </form>
                     </div>
                 </div>
