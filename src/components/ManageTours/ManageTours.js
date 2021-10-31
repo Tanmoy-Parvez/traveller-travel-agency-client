@@ -69,7 +69,7 @@ const ManageTours = () => {
                         <th>Update</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody className="bg-dark">
                     {
                         allBookings.map((allBooking, index) =>
                             <tr key={index} className="text-start">
@@ -78,7 +78,7 @@ const ManageTours = () => {
                                 <td>{allBooking?.email}</td>
                                 <td className="text-uppercase">{allBooking?.title}</td>
                                 <td className="text-uppercase">{allBooking?.status}</td>
-                                <td className="d-flex pb-5">
+                                <td className="d-flex align-items-center">
                                     <button onClick={() => handleApproved(allBooking?._id)} className="btn btn-success me-3"><i className="fas fa-check"></i></button>
                                     <button onClick={() => handleCancel(allBooking?._id)} className="btn btn-danger"><i className="fas fa-times"></i></button>
                                 </td>
